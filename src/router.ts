@@ -20,22 +20,10 @@ const routes = [
     path: /\/shoppingList/,
     page: initShoppingList,
   },
-  // {
-  //     path:,
-  //     page:
-  // },
-  // {
-  //     path:,
-  //     page:
-  // },
-  // {
-  //     path:,
-  //     page:
-  // },
-  // {
-  //     path:,
-  //     page:
-  // },
+  {
+    path: /\/anotador-app/,
+    page: initHome,
+  },
 ];
 
 export function initRouter(container: Element) {
@@ -53,9 +41,9 @@ export function initRouter(container: Element) {
       }
     }
   }
-  // if (location.host.includes("github.io")) {
-  //   goTo("/atiendo-boludos-q/home");
-  // }
+  if (location.host.includes("github.io")) {
+    goTo("/anotador-app");
+  }
   if (location.pathname == "/") {
     goTo("/home");
   } else {
