@@ -53,7 +53,7 @@ const state = {
   },
   listeners: [],
   init() {
-    const firstState = localStorage.getItem("saved-state");
+    const firstState = localStorage.getItem("saved-state-anotador");
     if (!firstState) {
       return;
     } else {
@@ -68,7 +68,10 @@ const state = {
     for (const cb of this.listeners) {
       cb();
     }
-    localStorage.setItem("saved-state", JSON.stringify(this.getState()));
+    localStorage.setItem(
+      "saved-state-anotador",
+      JSON.stringify(this.getState())
+    );
   },
   addTask(id, textContent) {
     const tarea = new Tarea();
