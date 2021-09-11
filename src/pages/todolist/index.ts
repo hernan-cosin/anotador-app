@@ -140,7 +140,7 @@ export function initTodoList(params) {
 
   function createTasks() {
     const taskContainer = div.querySelector(".tasks-container");
-    const tareas = state.getEnabledtasks() as any;
+    const tareas = state.getEnabledTasks() as any;
 
     taskContainer.innerHTML = "";
     for (const t of tareas) {

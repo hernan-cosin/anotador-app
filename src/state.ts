@@ -70,9 +70,9 @@ const state = {
     found.deleted = value;
     this.setState(currentState);
   },
-  getEnabledtasks() {
+  getEnabledTasks() {
     const currentState = this.getState();
-    const filtered = currentState.tasks.filter((t) => {
+    const filtered = currentState.tasks?.filter((t) => {
       return t.deleted == false;
     });
     return filtered;
