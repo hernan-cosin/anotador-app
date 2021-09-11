@@ -23,9 +23,33 @@ class ListItem {
 
 const state = {
   data: {
-    tasks: [],
-    notes: [],
-    listItem: [],
+    tasks: [
+      {
+        id: 10,
+        textContent: "test",
+        completed: false,
+        deleted: true,
+        date: "",
+      },
+    ],
+    notes: [
+      {
+        id: 10,
+        textContent: "test",
+        completed: false,
+        deleted: true,
+        date: "",
+      },
+    ],
+    listItem: [
+      {
+        id: 10,
+        textContent: "test",
+        completed: false,
+        deleted: true,
+        price: 0,
+      },
+    ],
   },
   listeners: [],
   init() {
