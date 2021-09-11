@@ -22,7 +22,7 @@ const routes = [
   },
   {
     path: /\/anotador-app/,
-    page: initHome,
+    page: initTodoList,
   },
 ];
 
