@@ -237,6 +237,8 @@ const state = {
     const filtered = recipes.filter((r) => {
       return r.deleted == false;
     });
+    console.log(filtered);
+
     return filtered;
   },
   deleteRecipe(id: number) {
