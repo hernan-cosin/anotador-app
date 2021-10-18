@@ -58,7 +58,7 @@ const state = {
         price: 0,
       },
     ],
-    recipes: [],
+    recipes: ([] = []),
   },
   listeners: [],
   init() {
