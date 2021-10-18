@@ -118,7 +118,7 @@ export function initRecipes(params) {
   function loadList() {
     const recipeListContainer = div.querySelector(".recipes-list");
     recipeListContainer.innerHTML = ``;
-    const recetas = state.getEnabledRecipes();
+    const recetas = state.getEnabledRecipes() as any;
 
     for (const r of recetas) {
       const li = document.createElement("li");
