@@ -219,12 +219,12 @@ const state = {
 
     this.setState(currentState);
   },
-  calculateTotalPrice(array: number[]) {
-    const reducer = (previousValue, currenValue) => {
-      return previousValue + currenValue;
-    };
-    return array.reduce(reducer);
-  },
+  // calculateTotalPrice(array: number[]) {
+  //   const reducer = (previousValue, currenValue) => {
+  //     return previousValue + currenValue;
+  //   };
+  //   return array.reduce(reducer);
+  // },
   addNewRecipe(recipe: Recipe) {
     const lastState = this.getState();
     const recipes = lastState.recipes;
@@ -237,8 +237,6 @@ const state = {
     const filtered = recipes.filter((r) => {
       return r.deleted == false;
     });
-    console.log(filtered);
-
     return filtered;
   },
   deleteRecipe(id: number) {
