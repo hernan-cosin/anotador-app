@@ -233,9 +233,11 @@ const state = {
   },
   getEnabledRecipes() {
     const lastState = this.getState();
-    return lastState.recipes.filter((r) => {
+    const recipes = lastState.recipes;
+    const filtered = recipes.filter((r) => {
       return r.deleted == false;
     });
+    return filtered;
   },
   deleteRecipe(id: number) {
     const lastState = this.getState();
