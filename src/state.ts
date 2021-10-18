@@ -225,7 +225,8 @@ const state = {
   },
   addNewRecipe(recipe: Recipe) {
     const lastState = this.getState();
-    lastState.recipes.push(recipe);
+    const recipes = lastState.recipes;
+    recipes.push(recipe);
     this.setState(lastState);
   },
   getEnabledRecipes() {
