@@ -8,7 +8,7 @@ export function initNotes(params) {
           <c-header class="header" back-button="true"></c-header>
           <div class="container">
               <c-text class="title" variant="title">Mis notas</c-text>
-              <c-form class="form" text-area="true"></c-form>
+              <c-form class="form" text-area="true" area-place-holder="Nueva nota . . ."></c-form>
               <ul class="notes-container">
               </ul>
           </div>

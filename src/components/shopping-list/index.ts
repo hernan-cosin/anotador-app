@@ -12,9 +12,7 @@ export function initShoppingItem() {
       this.shadow = this.attachShadow({ mode: "open" });
       this.render();
     }
-    connectedCallback() {
-      // this.render();
-    }
+    connectedCallback() {}
     render() {
       const div = document.createElement("div");
       const style = document.createElement("style");

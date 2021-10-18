@@ -21,6 +21,14 @@ class ListItem {
   price: number = 0;
 }
 
+class Recipe {
+  id: number;
+  name: string;
+  ingredients: string[];
+  preparation: string;
+  deleted: boolean = false;
+}
+
 const state = {
   data: {
     tasks: [
@@ -50,6 +58,7 @@ const state = {
         price: 0,
       },
     ],
+    recipes: [],
   },
   listeners: [],
   init() {
@@ -205,6 +214,32 @@ const state = {
   calculateTotalPrice(array: number[]) {
     const reducer = (previousValue, currenValue) => previousValue + currenValue;
     return array.reduce(reducer);
+  },
+  addNewRecipe(recipe: Recipe) {
+    const lastState = this.getState();
+    lastState.recipes.push(recipe);
+    this.setState(lastState);
+  },
+  getEnabledRecipes() {
+    const lastState = this.getState();
+    return lastState.recipes.filter((r) => {
+      return r.deleted == false;
+    });
+  },
+  deleteRecipe(id: number) {
+    const lastState = this.getState();
+    const found = lastState.recipes.find((r) => {
+      return r.id == id;
+    });
+    found.deleted = true;
+    state.setState(lastState);
+  },
+  getRecipeData(id) {
+    const lastState = this.getState();
+    const found = lastState.recipes.find((r) => {
+      return r.id == id;
+    });
+    return found;
   },
 };
 

@@ -61,6 +61,7 @@ export function initHeader() {
                     line-height: 120px;
                     color: var(--white);
                     margin: 0;
+                    font-family: "Poppins", sans-serif;
                 }
 
                 @media (min-width: 769px) {

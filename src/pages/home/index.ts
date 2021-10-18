@@ -9,6 +9,7 @@ export function initHome(params) {
           <li class="li todo"><c-button class="c-button tareas">Tareas pendientes</c-button></li>
           <li class="li notes"><c-button class="c-button notas">Notas</c-button></li>
           <li class="li list"><c-button class="c-button compras">Lista de compras</c-button></li>
+          <li class="li recetario"><c-button class="c-button recetario">Recetario</c-button></li>
         </ul>
       </div>
     </div>
@@ -77,6 +78,10 @@ export function initHome(params) {
     .list:hover .c-button{
       color: var(--list-bg);
     }
+
+    .recetario:hover .c-button{
+      color: var(--recetario);
+    }
   `;
 
   const btnTasks = div
@@ -87,6 +92,9 @@ export function initHome(params) {
     .shadowRoot.querySelector(".btn") as any;
   const btnShopping = div
     .querySelector(".c-button.compras")
+    .shadowRoot.querySelector(".btn") as any;
+  const btnRecipes = div
+    .querySelector(".c-button.recetario")
     .shadowRoot.querySelector(".btn") as any;
 
   btnTasks.addEventListener("click", (e) => {
@@ -102,6 +110,11 @@ export function initHome(params) {
   btnShopping.addEventListener("click", (e) => {
     e.preventDefault();
     params.goTo("/shoppingList");
+  });
+
+  btnRecipes.addEventListener("click", (e) => {
+    e.preventDefault();
+    params.goTo("/recipes");
   });
 
   div.appendChild(style);

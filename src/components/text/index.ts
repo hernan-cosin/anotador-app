@@ -17,6 +17,7 @@ export function initText() {
       style.innerHTML = `
         .body {
             font-size: 24px;
+            font-family: "Poppins", sans-serif;
             color: var(--white);
             margin: 0;
         }
@@ -27,6 +28,27 @@ export function initText() {
             color: var(--white);
             margin: 0;
         }
+
+        .item {
+          font-size: 18px;
+          font-family: "Poppins", sans-serif;
+          color: var(--white);
+          margin: 0;
+        }
+
+        .item-open {
+          font-size: 18px;
+          font-family: "Poppins", sans-serif;
+          color: var(--black);
+          margin: 0;
+          cursor: pointer;
+        }
+
+        .item-info {
+          font-size: 18px;
+          font-family: "Poppins", sans-serif;
+          color: var(--black);
+          margin: 0;
         `;
 
       this.shadow.appendChild(text);

@@ -13,12 +13,14 @@ export function initForm() {
       const style = document.createElement("style");
       const textAreaInput = this.getAttribute("text-area");
       const placeHolder = this.getAttribute("place-holder");
+      const areaPlaceHolder = this.getAttribute("area-place-holder");
+      const button = this.getAttribute("button") || "true";
 
       form.innerHTML = `
             <div class="content">
                 ${
                   textAreaInput
-                    ? "<textarea class='text-area' placeholder='Nueva nota . . .'></textarea>"
+                    ? `<textarea class="text-area" placeholder='${areaPlaceHolder}' ></textarea>`
                     : `<input class="input" type="text" placeholder='${placeHolder}'>`
                 }
                 <button class="button"><img src=${buttonUrl} alt="Add button"></button>
@@ -85,10 +87,22 @@ export function initForm() {
             .button:hover {
               transform: scale(1.05);
             }
+
+            .button.false {
+              display: none;
+            }
             `;
 
       this.shadow.appendChild(form);
       this.shadow.appendChild(style);
+
+      const addBtn = form.querySelector(".button");
+      if (button == "false") {
+        addBtn.classList.add("false");
+      }
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+      });
     }
   }
   customElements.define("c-form", Form);

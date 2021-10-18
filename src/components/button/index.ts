@@ -10,15 +10,14 @@ export function initButton() {
       const btn = document.createElement("button");
       const style = document.createElement("style");
       btn.setAttribute("class", "btn");
-
+      const size = this.getAttribute("size") || 24;
       btn.textContent = this.textContent;
-      //   btn.innerHTML = `
-      //   `;
+
       style.innerHTML = `
             .btn {
                 border: none;
                 background: none;
-                font-size: 24px;
+                font-size: ${size + "px"};
                 color: inherit;
                 padding: 0;
                 font-family: "Poppins", sans-serif;

@@ -2,6 +2,8 @@ import { initHome } from "../src/pages/home";
 import { initTodoList } from "./pages/todolist";
 import { initNotes } from "./pages/notes";
 import { initShoppingList } from "./pages/shopping-list";
+import { initNewRecipes } from "./pages/new-recipe";
+import { initRecipes } from "./pages/recipes";
 
 const routes = [
   {
@@ -19,6 +21,14 @@ const routes = [
   {
     path: /\/shoppingList/,
     page: initShoppingList,
+  },
+  {
+    path: /\/recipes/,
+    page: initRecipes,
+  },
+  {
+    path: /\/new-recipe/,
+    page: initNewRecipes,
   },
   {
     path: /\/anotador-app/,
